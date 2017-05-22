@@ -26,15 +26,17 @@ myData <- myData[,c("DateAndTime",
                     "Sub_metering_3")]
 
 #plotting charts
-#Plot 1
+#Plot 2
 par(mfrow=c(1,1))
-hist(myData$Global_active_power, 
-     xlab = "Global Active Power (killowatts)", 
-     main="Global Active Power", 
-     col="Red")
+plot(myData$DateAndTime, 
+     myData$Global_active_power, 
+     type="l",
+     ylab="Global Active Power (kilowatts)", 
+     xlab="")
 #Save to the file
 dev.copy(png, 
-         "/Users/petrpodrouzek/Documents/coursera/DS_Exploratory_Data_Analysis_PROJECT1/plot1.png",
+         "/Users/petrpodrouzek/Documents/coursera/DS_Exploratory_Data_Analysis_PROJECT1/plot2.png",
          height=480,
          width=480)
 dev.off()
+
